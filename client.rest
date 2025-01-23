@@ -1,0 +1,70 @@
+#Rotas Relacionadas a Usuários
+
+# Criar um novo usuário
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+  "name": "Vitor Silva",
+  "email": "vitor.silva@example.com"
+}
+
+###
+
+# Listar todos os usuários
+GET http://localhost:3000/api/users
+
+###
+
+# Buscar um usuário específico pelo ID
+GET http://localhost:3000/api/users/{{}}
+
+###
+
+# Deletar um usuário pelo ID
+DELETE http://localhost:3000/api/users/{{}}
+
+
+#Rotas relacionadas as tarefas
+
+# Criar uma tarefa para um usuário específico
+POST http://localhost:3000/api/tasks/{{}}
+Content-Type: application/json
+
+{
+  "title": "Terminar relatório",
+  "description": "Finalizar o relatório mensal até sexta-feira."
+}
+
+# Substitua {{userId}} pelo ID real do usuário.
+
+###
+
+# Listar todas as tarefas
+GET http://localhost:3000/api/tasks
+
+###
+
+# Buscar uma tarefa específica pelo ID
+GET http://localhost:3000/api/tasks/{{}}
+
+
+###
+
+# Deletar uma tarefa pelo ID
+DELETE http://localhost:3000/api/tasks/{{}}
+
+###
+# Listar todas as tarefas de um usuário específico
+GET http://localhost:3000/api/users/{{}}/tasks
+
+
+###
+
+# Buscar um usuário pelo nome
+GET http://localhost:3000/api/users/by-name/Vitor Silva
+
+
+###
+# Deletar um usuário pelo nome
+DELETE http://localhost:3000/api/users/by-name/Vitor Silva
